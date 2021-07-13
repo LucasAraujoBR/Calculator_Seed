@@ -1,5 +1,7 @@
 # Calculator_Seed
 Commits Semânticos
+
+
 build: Alterações que afetam o sistema de construção ou dependências externas (escopos de exemplo: gulp, broccoli, npm),
 
 
