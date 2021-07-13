@@ -7,11 +7,14 @@ class Calculator {
     }
 
     clear() {
+        this.currentOperand = ''
+        this.previousOpreand = ''
+        this.operation = undefined
 
     }
 
     delete() {
-
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
     appendNumber(number) {
@@ -30,11 +33,59 @@ class Calculator {
     }
 
     compute() {
+        let computation
+        const prev = paeseFloat(this.previousOpreand)
+        const current = parseFloat(this.currentOperand)
+        if (isNaN(prev) || isNaN(current)) return
+        switch(this.operation) {
+            case '+':
+                computation = prev + current
+                break
+            case '-':
+                computation = prev - current
+                break
+            case '*':
+                computation = prev * current
+                break
+            case '/':
+                computation = prev / current
+                break
+            default:
+                return
 
+        }
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOpreand = ''
+    }
+
+    getDisplayNumber(number){
+        const stringNumber = number.toString()
+        const inttegerDigits = parseFloat(stringNumber.split('.')[0])
+        const decimalDigits = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(inttegerDigits)) {
+            integerDisplay = ''
+        } else {
+            integerDisplay = inttegerDigits.toLocaleString('en',{
+                maximumFractionDigits: 0 })
+        }
+        if (decimalDigits != null) {
+            return `${integerDisplay}.${decimalDigits}`
+        } else {
+            return integerDisplay
+        }
     }
 
     updateDisplay() {
-        this.currentOperandTextElement.innerText = this.currentOperand
+        this.currentOperandTextElement.innerText = 
+           this.getDisplayNumber(this.currentOperand)
+        if(this.operation != null) {
+            this.previousOpreandTextElement.innerText = 
+            `${this.getDisplayNumber(this.previousOpreand)} ${this.operation}`
+        } else {
+            this.previousOpreandTextElement.innerText = ''
+        }
     }
 }
 
@@ -73,5 +124,15 @@ operationButtons.forEach(button => {
 
 equalsButton.addEventListener('click', button => {
     calculator.compute()
+    calculator.updateDisplay()
+})
+
+allClearButton.addEventListener('click',button => {
+    calculator.clear()
+    calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click',button => {
+    calculator.cdelete()
     calculator.updateDisplay()
 })
