@@ -1,55 +1,91 @@
-:root{
+:root {
     --light-gray: #3a465c;
     --dark-gray: #2e3746;
     --light-orange: #fb8231;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{    
+body {
     background-color: var(--light-gray);
 }
 
-.container{
+.container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container main{
+.container main {
     border-radius: 9px;
     background-color: azure;
     width: 20rem;
     overflow: hidden;
 }
 
-.result{
+.result {
     background-color: var(--dark-gray);
     padding: 1.5rem;
 }
 
-#content{
+#content {
     text-align: end;
 }
 
-.operator, .number{
+.operator,
+.number {
     width: 50px;
     height: 50px;
     margin: 15px;
     float: left;
+    border: transparent;
     border-radius: 10px;
     font-size: 1.2rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
-#data-0{
+#data-0 {
     width: 130px;
 }
 
-#data-clear{
+#data-clear {
     width: 210px;
+}
+
+.operator,
+.number:hover {
+    border: transparent;
+    background-color: #9b8282;
+    color: #fff;
+}
+
+.operator:nth-child(2) {
+    font-size: 20px;
+    background-color: #20b2aa;
+}
+
+.operator:nth-child(6) {
+    font-size: 15px;
+    background-color: #ffa500;
+}
+
+.operator:nth-child(10) {
+    font-size: 20px;
+    background-color: #f08080;
+}
+
+.operator:nth-child(14) {
+    font-size: 20px;
+    background-color: #7d930e;
+}
+
+.operator:nth-child(17) {
+    font-size: 20px;
+    background-color: #2196f3;
 }
