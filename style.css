@@ -2,6 +2,11 @@
     --light-gray: #3a465c;
     --dark-gray: #2e3746;
     --light-orange: #fb8231;
+    --dark-orange: #d2582f;
+    --bg-btac: #808080;
+    --bg-btachover: #3a3b3c;
+    --bg-numberhover: #9b8282;
+
 }
 
 * {
@@ -12,6 +17,18 @@
 
 body {
     background-color: var(--light-gray);
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border: transparent;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 .container {
@@ -30,62 +47,52 @@ body {
 
 .result {
     background-color: var(--dark-gray);
-    padding: 1.5rem;
+    padding: 1.3rem;
 }
 
 #content {
     text-align: end;
+    color: white;
+    font-size: 1.3rem;
+    font-family: Roboto;
+    white-space: nowrap;
 }
 
-.operator,
-.number {
-    width: 50px;
-    height: 50px;
-    margin: 15px;
-    float: left;
-    border: transparent;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
 
 #data-0 {
     width: 130px;
 }
 
-#data-clear {
-    width: 210px;
-}
-
-.operator,
 .number:hover {
     border: transparent;
-    background-color: #9b8282;
+    background-color: var(--bg-numberhover);
     color: #fff;
 }
 
-.operator:nth-child(2) {
-    font-size: 20px;
-    background-color: #20b2aa;
+
+.operator{
+    background-color: var(--light-orange);
+    color: #fff;
 }
 
-.operator:nth-child(6) {
-    font-size: 15px;
-    background-color: #ffa500;
+.operator:hover {
+    background-color: var(--dark-orange);
+    color: #fff;
 }
 
-.operator:nth-child(10) {
-    font-size: 20px;
-    background-color: #f08080;
+#data-allClear{
+    width: 130px;
+    background-color: var(--bg-btac);
+    color: #fff;
 }
 
-.operator:nth-child(14) {
-    font-size: 20px;
-    background-color: #7d930e;
+#data-allClear:hover{
+    background-color: var(--bg-btachover);
 }
 
-.operator:nth-child(17) {
-    font-size: 20px;
-    background-color: #2196f3;
+.invert{    
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
