@@ -87,8 +87,8 @@ class Calculator {
   }
   
   
-  const numberButtons = document.querySelectorAll('[number]')
-  const operationButtons = document.querySelectorAll('[operator]')
+  const numberButtons = document.querySelectorAll('[data-number]')
+  const operationButtons = document.querySelectorAll('[data-operation]')
   const equalsButton = document.querySelector('[data-equals]')
   const deleteButton = document.querySelector('[data-delete]')
   const allClearButton = document.querySelector('[data-allClear]')
