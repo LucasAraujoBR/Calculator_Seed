@@ -1,0 +1,98 @@
+:root {
+  --light-gray: #3a465c;
+  --dark-gray: #2e3746;
+  --light-orange: #fb8231;
+  --dark-orange: #d2582f;
+  --bg-btac: #808080;
+  --bg-btachover: #3a3b3c;
+  --bg-numberhover: #9b8282;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  float: left;
+  border: transparent;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container main {
+  border-radius: 9px;
+  background-color: azure;
+  width: 20rem;
+  overflow: hidden;
+}
+
+.result {
+  background-color: var(--dark-gray);
+  padding: 1.3rem;
+}
+
+#content {
+  text-align: end;
+  color: white;
+  font-size: 1.3rem;
+  font-family: Roboto;
+  white-space: nowrap;
+}
+
+
+#data-0 {
+  width: 130px;
+}
+
+.number:hover {
+  border: transparent;
+  background-color: var(--bg-numberhover);
+  color: #fff;
+}
+
+
+.operator{
+  background-color: var(--light-orange);
+  color: #fff;
+}
+
+.operator:hover {
+  background-color: var(--dark-orange);
+  color: #fff;
+}
+
+#data-allClear{
+  width: 130px;
+  background-color: var(--bg-btac);
+  color: #fff;
+}
+
+#data-allClear:hover{
+  background-color: var(--bg-btachover);
+}
+
+.invert{    
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
